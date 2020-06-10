@@ -1,4 +1,9 @@
 #include <stdio.h>
+/**
+* main - entry point
+*
+* return - returns to 0 if success
+*/
 
 int main(void)
 {
