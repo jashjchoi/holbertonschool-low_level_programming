@@ -1,24 +1,28 @@
 #include <stdio.h>
 /**
-* main - Entry point
+* main - print 00 to 99
 *
-* Description: print 00 to 99
-*
-* Return: Always 0 (if success)
+* Return: always 0 (if success)
 */
 int main(void)
 {
-	int i;
+	int first;
+	int second;
 
-	for (i = 0; i < 100; i++)
+	for (first = 48; first <= 57; first++)
 	{
-		putchar((i / 10) + '0');
-		putchar((i % 10) + '0');
-		if (i < 99)
+		for (second = 48; second <= 57; second++)
 		{
-			putchar(',');
-			putchar(' ');
+			putchar(first);
+			putchar(second);
+
+			if (first < 57 || second < 57)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 		}
+
 	}
 	putchar('\n');
 	return (0);
