@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
 * main - prints Holberton, followed by new line
@@ -14,6 +13,6 @@ int main(void)
 	{
 		_putchar(string[i]);
 	}
-	putchar('\n');
+	_putchar('\n');
 	return (0);
 }
