@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 /**
 * main - prints Holberton, followed by new line
@@ -9,7 +10,7 @@ int main(void)
 	int i;
 	char string[9] = "Holberton";
 
-	for (i =0; i < 9; i++)
+	for (i = 0; i < 9; i++)
 	{
 		_putchar(string[i]);
 	}
