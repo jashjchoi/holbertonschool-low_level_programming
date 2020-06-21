@@ -14,17 +14,16 @@ int main(void)
 	for (i = 0; i < 50; i++)
 	{
 		sum = f1 + f2;
-		printf("%d", sum);
 		f1 = f2;
 		f2 = sum;
 
-		if (i == 49)
+		if (i != 49)
 		{
-			printf("\n");
+			printf("%d, ", sum);
 		}
 		else
 		{
-			printf(", ");
+			printf("%d\n", sum);
 		}
 	}
 	return (0);
