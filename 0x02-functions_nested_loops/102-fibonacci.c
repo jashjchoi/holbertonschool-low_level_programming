@@ -7,14 +7,16 @@
 int main(void)
 {
 	int f1 = 0;
-	int f2 = 0;
+	int f2 = 1;
 	int i;
 	int sum;
+	
+	n = 50;
 
-	for (i = 0; i < 50; i++)
+	for (i = 1; i < n; i++)
 	{
 		sum = f1 + f2;
-		printf("%d", f2);
+		printf("%d", sum);
 		f1 = f2;
 		f2 = sum;
 
