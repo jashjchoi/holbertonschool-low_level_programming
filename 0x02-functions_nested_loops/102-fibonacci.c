@@ -10,10 +10,8 @@ int main(void)
 	int f2 = 1;
 	int i;
 	int sum;
-	
-	n = 50;
 
-	for (i = 1; i < n; i++)
+	for (i = 1; i < 50; i++)
 	{
 		sum = f1 + f2;
 		printf("%d", sum);
