@@ -11,7 +11,7 @@ int main(void)
 	int i;
 	int sum;
 
-	for (i = 1; i < 50; i++)
+	for (i = 0; i < 50; i++)
 	{
 		sum = f1 + f2;
 		printf("%d", sum);
@@ -24,7 +24,7 @@ int main(void)
 		}
 		else
 		{
-			printf(",");
+			printf(", ");
 		}
 	}
 	return (0);
