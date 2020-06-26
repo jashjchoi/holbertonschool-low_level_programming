@@ -3,7 +3,7 @@
 * string_toupper - change lowercase char to uppercase
 *
 * @letter: pointer to input str
-*
+* Description: to get 'a' to 'A', substract 32
 * Return: uppercase str
 */
 char *string_toupper(char *letter)
