@@ -1,0 +1,29 @@
+#include "holberton.h"
+/**
+* cap_string - captialize all words in str
+* @letter: pointer to input str
+*
+* Return: captalize the first letter
+*/
+char *cap_string(char *letter)
+{
+	int i;
+	int j;
+	char separators[] = "\t\n,;.!?"(){} ";
+
+	for (i = 0; letter[i] != '\0'; i++)
+	{
+		if (letter[i] >= 'a' && letter[i] <= 'z')
+		{
+			letter[i] = letter[i] - 32;	
+		}
+		for (j = 0; j <= 12; j++)
+		{
+			if (letter[i] == separators[j])
+			{
+				letter[i] = letter[i] - 32;
+			}
+		}
+	}
+	return (letter);
+}
