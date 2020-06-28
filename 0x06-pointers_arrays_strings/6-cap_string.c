@@ -23,6 +23,10 @@ char *cap_string(char *letter)
 				}
 			}
 		}
+		if (letter[i] == '\t')
+		{
+			letter[i] = ' ';
+		}
 	}
 	return (letter);
 }
