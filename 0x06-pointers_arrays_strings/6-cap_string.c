@@ -1,31 +1,28 @@
 #include "holberton.h"
 /**
 * cap_string - captialize all words in str
-* @str: pointer to input str
+* @letter: pointer to input str
 *
 * Return: captalize the first letter
 */
-char *cap_string(char *str)
+char *cap_string(char *letter)
 {
 	int i;
+	int j;
+	char separators[] = " \t\n,;.!?\"(){}";
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; letter[i] != '\0'; i++)
 	{
-		if (str[0] >= 'a' && str[0] <= 'z')
+		if (letter[i] >= 'a' && letter[i] <= 'z')
 		{
-			str[0] = str[0] - 32;
-		}
-		if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '.')
-		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+			for (j = 0; j < 12; j++)
 			{
-				str[i + 1] = str[i + 1] - 32;
-			}
-			if (str[i] == '\t')
-			{
-				str[i] = ' ';
+				if (letter[i - 1] == separators[j])
+				{
+					letter[i] = letter[i] - 32;
+				}
 			}
 		}
 	}
-	return (str);
+	return (letter);
 }
