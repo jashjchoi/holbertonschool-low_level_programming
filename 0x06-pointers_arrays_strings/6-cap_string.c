@@ -23,10 +23,6 @@ char *cap_string(char *letter)
 				}
 			}
 		}
-		if (letter[i] == separators[1])
-		{
-			letter[i] = separators[0];
-		}
 	}
 	return (letter);
 }
