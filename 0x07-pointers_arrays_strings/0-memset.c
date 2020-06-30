@@ -4,6 +4,7 @@
 * @s: pointer to the memory area to be filed
 * @b: byte to fill the memory area
 * @n: number of bytes to be filled
+* Return: pointer to str
 */
 char *_memset(char *s, char b, unsigned int n)
 {
