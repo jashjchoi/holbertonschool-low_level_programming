@@ -1,10 +1,10 @@
 #include "holberton.h"
 /**
-* recursive_strlen: returns the length of str
+* recursive_strlen - returns the length of str
 * @str: str
 * Return: length of str
 */
-int recursive_strlen (char *str)
+int recursive_strlen(char *str)
 {
 	if (*str == '\0')
 	{
@@ -23,7 +23,7 @@ int recursive_strlen (char *str)
 * @str: given string
 * Return: 1 if pailndrome, 0 if no palindrome
 */
-int testing_palindrome (int start, int end, char *str)
+int testing_palindrome(int start, int end, char *str)
 {
 	if (start >= end)
 	{
@@ -39,14 +39,15 @@ int testing_palindrome (int start, int end, char *str)
 	}
 }
 /**
-* is_palindrome - checks str
+* is_palindrome - states if str is palindrome or not
+* Description: use 2 recursive functions
 * @s: str to be checked
 * Return: returns 1 if palindrome, 0 if no palindrome
 */
-int is_palindrome (char *s)
+int is_palindrome(char *s)
 {
-	int c;
+	int end_index;
 
-	c =  recursive_strlen(s) - 1;
-	return (testing_palindrome(0, c, s));
+	end_index =  recursive_strlen(s) - 1;
+	return (testing_palindrome(0, end_index, s));
 }
