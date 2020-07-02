@@ -10,23 +10,21 @@
 void print_diagsums(int *a, int size)
 {
 	int i;
-	int j;
-	int sum_leftDiag = 0;
-	int sum_rightDiag = 0;
+	int j = 0;
+	int sum_left = 0;
+	int sum_right = 0;
 
+	for (i = 0; i < (size * size); i++)
+	{
+		sum_left = sum_left + a[i];
+		i = i + size;
+	}
+
+	j = size - 1;
 	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j < size; j++)
-		{
-			if (i == j)
-			{
-				sum_leftDiag = sum_leftDiag + a[i][j];
-			}
-			if ((i + j) == (size - 1))
-			{
-				sum_rightDiag = sumrightDiag + a[i][j];
-			}
-		}
+		sum_right = sum_right + a[j];
+		j = j + (size - 1);
 	}
-	printf("%d", "%d\n", sum_leftDiag, sum_rightDiag);
+	printf("%d, %d\n", sum_left, sum_right);
 }
