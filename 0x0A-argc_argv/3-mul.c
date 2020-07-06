@@ -5,7 +5,7 @@
 * main - multiplies 2 numbers
 * @argc: number(or length) of command arguments
 * @argv: pointer to arguments
-* Return: 0
+* Return: 0 if success, 1 if it doesn't receive 2 arguments
 */
 int main(int argc, char *argv[])
 {
