@@ -17,9 +17,9 @@ int _strlen(char *s)
 	return (length);
 }
 /**
-* _strdup - returns a pointer to a new string which is a duplicate of the string str
-* @str: str to be copied 
-* Return: pointer to dup_str, NULL if str is NULL or insuffient memory available
+* _strdup - returns pointer to new string which is duplicate of the string str
+* @str: str to be copied
+* Return: pointer to dup str, NULL if str == NULL or insuffient memory
 */
 char *_strdup(char *str)
 {
@@ -32,11 +32,11 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	length = _strlen(str);
-	dup_str = malloc (sizeof(char) * (length + 1));
+	dup_str = malloc((sizeof(char)) * (length + 1));
 
 	if (dup_str == NULL)
 	{
-		return (NULL);	
+		return (NULL);
 	}
 	for (i = 0; i < length; i++)
 	{
