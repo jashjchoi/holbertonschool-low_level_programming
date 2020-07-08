@@ -24,19 +24,24 @@ int _strlen(char *s)
 */
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, length1, length2;
+	int i;
+	int j;
+	int length1;
+	int length2;
 	char *array;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
 		s1 = "";
+	}
+	if (s2 == NULL)
+	{
 		s2 = "";
 	}
-
 	length1 = _strlen(s1);
 	length2 = _strlen(s2);
 
-	array = malloc((sizeof(char) * length1) + (sizeof(char) * length2) + 1);
+	array = malloc((sizeof(char)) * (length1 + length2 + 1));
 
 	if (array == NULL)
 	{
