@@ -11,7 +11,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *array;
-	unsigned int i, length1, length2;
+	unsigned int i, j, length1, length2;
 
 	if (s1 == NULL || s2 == NULL)
 	{
@@ -34,16 +34,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < length1 + length2; i++)
+	for (i = 0; i < length1; i++)
 	{
-		if (i >= length1)
-		{
-			array[i] = s2[i - length1];
-		}
-		else
-		{
-			array[i] = s1[i];
-		}
+		array[i] = s1[i];
+	}
+	for (j = 0; j < length2; j++)
+	{
+		array[i] = s2[j];
+		i++;
 	}
 	array[i] = '\0';
 	return (array);
