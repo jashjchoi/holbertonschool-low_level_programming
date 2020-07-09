@@ -10,21 +10,25 @@ int coin_change(int m)
 {
 	int coins = 0;
 
-	while (m != 0)
+	while (m != '\0')
 	{
-		if (m >= 25)
+		if (m - 25 >= 0)
 		{
 			m = m - 25;
 		}
-		else if (m >= 10)
+		else if (m - 10 >= 0)
 		{
 			m = m - 10;
 		}
-		else if (m >= 5)
+		else if (m - 10 >= 0)
 		{
 			m = m - 5;
 		}
-		else if (m >= 1)
+		else if (m - 2 >= 0)
+		{
+			m = m - 2;
+		}
+		else if (m - 1 >= 0)
 		{
 			m = m - 1;
 		}
