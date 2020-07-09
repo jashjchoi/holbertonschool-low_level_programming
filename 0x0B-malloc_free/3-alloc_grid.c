@@ -41,7 +41,7 @@ int **alloc_grid(int width, int height)
 				free(dgrid[i]);
 			}
 			return (NULL);
-		}	
+		}
 	}
 	return (dgrid);
 }
