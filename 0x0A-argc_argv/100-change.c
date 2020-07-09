@@ -1,6 +1,38 @@
 #include <stdio.h>
 #include "holberton.h"
 #include <stdlib.h>
+/**
+* coin_change - prints num of coins
+* @m: amount of money
+* Return: min number of coins
+*/
+int coin_change(int m)
+{
+	int coins = 0;
+
+	while (m != 0)
+	{
+		if (m >= 25)
+		{
+			m = m - 25;
+		}
+		else if (m >= 10)
+		{
+			m = m - 10;
+		}
+		else if (m >= 5)
+		{
+			m = m - 5;
+		}
+		else if (m >= 1)
+		{
+			m = m - 1;
+		}
+		coins++;
+	}
+	return (coins);
+}
+
 
 /**
 * main - prints the minimum number of coins to make change
@@ -10,8 +42,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int cents = 0;
-	int money = 0;
+	int money;
 
 	if (argc != 2)
 	{
@@ -19,34 +50,11 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	money = atoi(argv[1]);
-	if (money <= 0)
+	if (money < 0)
 	{
-		printf("0");
-		return (1);
+		printf("0\n");
+		return (0);
 	}
-	else
-	{
-		if (money != 0)
-		{
-			while (money - 25 > 0)
-			{
-				money = money - 25;
-			}
-			while (money - 10 > 0)
-			{
-				money = money - 10;
-			}
-			while (money - 5 > 0)
-			{
-				money = money - 5;
-			}
-			while (money - 1 > 0)
-			{
-				money = money - 1;
-			}
-			cents++;
-		}
-	}
-	printf("%d\n", cents);
+	printf("%d\n", coin_change(money));
 	return (0);
 }
