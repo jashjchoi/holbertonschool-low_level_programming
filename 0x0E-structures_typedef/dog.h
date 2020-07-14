@@ -15,6 +15,11 @@ struct dog
 	char *owner;
 };
 
+/**
+* dog_t - new typeof for struct of dog
+*/
+typeof struct dog dog_t;
+
 int _putchar(char);
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
