@@ -14,14 +14,21 @@ int main(int argc, char *argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
+		exit(98);
 	}
 	first_num = atoi(argv[1]);
 	operator = argv[2];
 	second_num = atoi(argv[3]);
 
-	if (get_op_func(argv[2]) == NULL)
+	if (argv[2] == NULL)
 	{
 		printf("Error\n");
+		exit(99);
+	}
+	if (second_num == 0 && (*operator == '%' || *operator == '/'))
+	{
+		printf("Error\n");
+		exit(100);
 	}
 	f = get_op_func(operator);
 	output_num = f(first_num, second_num);
