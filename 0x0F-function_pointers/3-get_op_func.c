@@ -2,7 +2,7 @@
 /**
 * get_op_func - selects the correct function to perform the operation
 * @s: pointer to operator
-* Return: function
+* Return: operator function
 */
 
 int (*get_op_func(char *s))(int, int)
@@ -17,12 +17,14 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i;
 
-	for (i = 0; i < 5; i++)
+	i = 0;
+	while (i < 5)
 	{
 		if (*(ops[i].op) == *s)
 		{
 			return (ops[i].f);
 		}
+		i++;
 	}
 	return (NULL);
 }
