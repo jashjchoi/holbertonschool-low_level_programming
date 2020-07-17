@@ -7,7 +7,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int first_num, second_num
+	int first_num, second_num;
 	int (*f)(int, int);
 
 	if (argc != 4)
