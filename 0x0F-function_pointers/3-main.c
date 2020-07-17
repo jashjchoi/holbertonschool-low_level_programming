@@ -3,12 +3,11 @@
 * main - main function for operators
 * @argc: number (or length) of command arguments
 * @argv: pointer to arguments
-* Return: 0 if success, error if fails
+* Return: 0 if success, error and exit if function fails
 */
 int main(int argc, char *argv[])
 {
-	int first_num, second_num, output_num;
-	char *operator;
+	int first_num, second_num
 	int (*f)(int, int);
 
 	if (argc != 4)
@@ -17,21 +16,14 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	first_num = atoi(argv[1]);
-	operator = argv[2];
+	f = get_op_func(argv[2]);
 	second_num = atoi(argv[3]);
 
-	if (argv[2] == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	if (second_num == 0 && (*operator == '%' || *operator == '/'))
+	if ((*argv[2] == '%' || *argv[2] == '/') && second_num == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	f = get_op_func(operator);
-	output_num = f(first_num, second_num);
-	printf("%d\n", output_num);
+	printf("%d\n", f(first_num, second_num));
 	return (0);
 }
