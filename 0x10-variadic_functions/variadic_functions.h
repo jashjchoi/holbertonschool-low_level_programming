@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <string.h>
 /**
 * struct print_vars - print struct type within function
 * @t_vars: print variable type
