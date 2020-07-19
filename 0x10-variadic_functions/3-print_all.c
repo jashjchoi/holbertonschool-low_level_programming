@@ -12,7 +12,7 @@ void print_all(const char * const format, ...)
 
 	va_start(list_of_format, format);
 	sep = ", ";
-	while (format != NULL && format[i] != '\0' && i < 4)
+	while (format != NULL && format[i] != '\0')
 	{
 		if (i == strlen(format) - 1)
 		{
@@ -33,8 +33,7 @@ void print_all(const char * const format, ...)
 				string = va_arg(list_of_format, char *);
 				if (string == NULL)
 				{
-					printf("(nil)");
-					break;
+					string = "(nil)";
 				}
 				printf("%s%s", string, sep);
 				break;
