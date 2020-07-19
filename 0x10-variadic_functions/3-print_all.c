@@ -6,19 +6,23 @@
 */
 void print_all(const char * const format, ...)
 {
-	unsigned int i = 0;
+	int i = 0, j = 0;
 	va_list list_of_format;
 	char *string, *sep = "";
 
 	va_start(list_of_format, format);
 	sep = ", ";
-	while (format && format[i])
+	while (format != NULL && format[i] != '\0')
 	{
-		if (i == strlen(format) - 1)
+		i++;
+	}
+	while (format && format[j])
+	{
+		if (j == (i - 1))
 		{
 			sep = "";
 		}
-		switch (format[i])
+		switch (format[j])
 		{
 			case 'c':
 				printf("%c%s", va_arg(list_of_format, int), sep);
@@ -38,10 +42,10 @@ void print_all(const char * const format, ...)
 				printf("%s%s", string, sep);
 				break;
 			default:
-				i++;
+				j++;
 				continue;
 		}
-		i++;
+		j++;
 	}
 	printf("\n");
 	va_end(list_of_format);
