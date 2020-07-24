@@ -21,7 +21,12 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	}
 	new->str = strdup(str);
-
+	
+	if (new->str == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
 	for (i = 0; new->str[i] != '\0'; i++)
 	{
 		;
@@ -42,5 +47,5 @@ list_t *add_node_end(list_t **head, const char *str)
 		}
 		dup_h->next = new;
 	}
-	return (new);
+	return (*head);
 }
