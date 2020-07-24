@@ -7,14 +7,14 @@
 /**
 * struct list_s - singly linked list
 * @str: string
-* @length: length of a str
+* @len: length of a str
 * @next: points the next node
 * Description: ssl node strcture
 */
 typedef struct list_s
 {
 	char *str;
-	unsigned int length;
+	unsigned int len;
 	struct list_s *next;
 } list_t;
 
