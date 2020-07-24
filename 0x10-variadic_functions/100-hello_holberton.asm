@@ -4,11 +4,11 @@ section .data
 	section .text
 	global main
 main:
-	mov	rax, 1
-        mov	rdi, 1
-	mov	rsi, msg
-	mov	rdx, 17
+	mov rax, 1
+        mov rdi, 1
+	mov rsi, msg
+	mov rdx, 17
 	syscall
-	mov	rax,
+	mov	rax, 60
 	mov	rdi, 0
 	syscall	
