@@ -12,6 +12,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	copy_h = head;
 
+	if (head == NULL)
+	{
+		return (NULL);
+	}
 	if (copy_h != NULL)
 	{
 		for (node = 0; (node < index) && (copy_h->next); node++)
