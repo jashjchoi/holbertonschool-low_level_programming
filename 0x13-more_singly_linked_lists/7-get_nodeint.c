@@ -8,14 +8,21 @@
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
 	unsigned int node;
+	listint_t *copy_h;
 
-	if (head != NULL)
+	copy_h = head;
+
+	if (copy_h != NULL)
 	{
 		for (node = 0; node < index; node++)
 		{
-			head = head->next;
+			if (head == NULL)
+			{
+				return (NULL);
+			}
+			copy_h = copy_h->next;
 		}
-		return (head);
+		return (copy_h);
 	}
 	else
 	{
