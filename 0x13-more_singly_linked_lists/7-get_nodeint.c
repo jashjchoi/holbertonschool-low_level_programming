@@ -7,22 +7,23 @@
 */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int node;
+	unsigned int node = 0;
 	listint_t *copy_h;
 
 	copy_h = head;
 
-	if (head == NULL)
+	if (copy_h == NULL)
 	{
 		return (NULL);
 	}
-	if (copy_h != NULL)
+	while (node < index)
 	{
-		for (node = 0; (node < index) && (copy_h->next); node++)
+		if (copy_h->next == NULL)
 		{
-			copy_h = copy_h->next;
+			return (NULL);
 		}
-		return (copy_h);
+		copy_h = copy_h->next;
+		node++;
 	}
-	return (NULL);
+	return (copy_h);
 }
