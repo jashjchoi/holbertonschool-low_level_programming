@@ -14,18 +14,11 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	if (copy_h != NULL)
 	{
-		for (node = 0; node < index; node++)
+		for (node = 0; (node < index) && (copy_h->next); node++)
 		{
-			if (head == NULL)
-			{
-				return (NULL);
-			}
 			copy_h = copy_h->next;
 		}
 		return (copy_h);
 	}
-	else
-	{
-		return (NULL);
-	}
+	return (NULL);
 }
