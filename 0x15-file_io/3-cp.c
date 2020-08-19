@@ -19,31 +19,31 @@ int main(int argc, char *argv[])
 	fdin = open(argv[1], O_RDONLY);
 	if (fdin == 1)
 	{
-		dprintf(STDERR_FILENO, "Error: Cannot read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	fdout = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdout == 1)
 	{
-		dprintf(STDERR_FILENO, "Error: Cannot write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	while (in_count == 1024)
 	{
 		in_count = read(fdin, buffer, 1024);
 		if (in_count == -1)
-			dprintf(STDERR_FILENO, "Error: Cannot read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		out_count = write(fdout, buffer, out_count);
 		if (out_count == -1)
-			dprintf(STDERR_FILENO, "Error: Cannot write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 	}
 	if (close(fdin) == -1)
-		dprintf(STDERR_FILENO, "Error: Cannot close fd %d\n", fdin);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdin);
 		exit(100);
 	if (close(fdout) == -1)
-		dprintf(STDERR_FILENO, "Error: Cannot close fd %d\n", fdout);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdout);
 		exit(100);
 	return (0);
 }
