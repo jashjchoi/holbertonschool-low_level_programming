@@ -16,13 +16,13 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	fdin = open(argv[i], O_RDONLY);
+	fdin = open(argv[1], O_RDONLY);
 	if (fdin == 1)
 	{
-		dprint(STDERR_FILENO, "Error: Cannot read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Cannot read from file %s\n", argv[1]);
 		exit(98);
 	}
-	fdout = open(argv[2], O_CREAT | O_WRNLY | O_TRUNC, perm);
+	fdout = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdout == 1)
 	{
 		dprintf(STDERR_FILENO, "Error: Cannot write to %s\n", argv[2]);
@@ -30,20 +30,20 @@ int main(int argc, char *argv[])
 	}
 	while (in_count == 1024)
 	{
-		in_count = read(in, buffer, 1024);
+		in_count = read(fdin, buffer, 1024);
 		if (in_count == -1)
 			dprintf(STDERR_FILENO, "Error: Cannot read from file %s\n", argv[1]);
 			exit(98);
-		out_count = write(out, buffer, out_count)
+		out_count = write(fdout, buffer, out_count);
 		if (out_count == -1)
 			dprintf(STDERR_FILENO, "Error: Cannot write to %s\n", argv[2]);
 			exit(99);
 	}
-	if (close(in) == -1)
-		dprintf(STDERR_FILENO, "Error: Cannot close fd %d\n", in);
+	if (close(fdin) == -1)
+		dprintf(STDERR_FILENO, "Error: Cannot close fd %d\n", fdin);
 		exit(100);
-	if (close(out) == -1)
-		dprintf(STDERR_FILENO, "Error: Cannot close fd %d\n", out);
-		eixt(100);
+	if (close(fdout) == -1)
+		dprintf(STDERR_FILENO, "Error: Cannot close fd %d\n", fdout);
+		exit(100);
 	return (0);
 }
