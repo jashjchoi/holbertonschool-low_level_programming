@@ -6,8 +6,6 @@
 */
 void hash_table_delete(hash_table_t *ht)
 {
-	hash_node_t *temp = NULL; 
-	hash_node_t *new_temp = NULL;
 	unsigned long int index = 0;
 
 	if (ht == NULL)
@@ -16,20 +14,30 @@ void hash_table_delete(hash_table_t *ht)
 	}
 	while (index < ht->size)
 	{
-		new_temp = ht->array[index];
-		while (temp)
-		{
-			temp = new_temp;
-			new_temp = new_temp->next;
-			if (temp->key != NULL)
-				free(temp->key);
-			if (temp->value != NULL)
-				free(temp->value);
-			free(temp);
-		}
-		free(ht->array[index]);
+		free_table(ht->array[index]);
 		index++;
 	}
 	free(ht->array);
 	free(ht);
+}
+/**
+* free_table - recursive function to delete and free the table
+* head: hash table to be deleted
+* Return: void
+*/
+void free_table(hash_node_t *head)
+{
+	hash_node_t *head_ptr = NULL;
+
+	if (head)
+	{
+		while (head)
+		{
+			head_ptr = head->next;
+			free(head->key);
+			free(head->value);
+			free(head);
+			head = head_ptr;
+		}
+	}
 }
