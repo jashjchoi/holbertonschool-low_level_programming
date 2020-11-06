@@ -3,18 +3,18 @@
 
 
 def island_perimeter(grid):
-    perimeter = 0
     if not len(grid):
         return 0
-    for e, row in enumerate(grid):
-        for i, num in enumerate(row):
+    pm = 0
+    for i, row in enumerate(grid):
+        for j, num in enumerate(row):
             if num == 1:
-                if grid[e][i - 1] != 1:
-                    perimeter += 1
-                if grid[e][i + 1] != 1:
-                    perimeter += 1
-                if grid[e - 1][i] != 1:
-                    perimeter += 1
-                if grid[e + 1][i] != 1:
-                    perimeter += 1
-    return perimeter
+                if grid[i][j - 1] != 1:
+                    pm += 1
+                if grid[i][j + 1] != 1:
+                    pm += 1
+                if grid[i - 1][j] != 1:
+                    pm += 1
+                if grid[i + 1][j] != 1:
+                    pm += 1
+    return pm
